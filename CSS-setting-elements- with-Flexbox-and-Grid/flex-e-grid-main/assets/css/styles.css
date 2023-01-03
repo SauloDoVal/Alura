@@ -5,7 +5,7 @@
 
 body {
   background-color: #1D232A;
-  font-family: 'Open S ans', 'icones', sans-serif;
+  font-family: 'Open Sans', 'icones', sans-serif;
   color: #ffffff;
 }
 
@@ -21,7 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #15191C;
-  padding: 8px 18px;
+  padding: 8px 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
 }
 
@@ -72,8 +72,9 @@ cabecalho__perfil {
     color: #95999C ;
     padding: 8px 32px;
     border-right: 1px solid #95999C;
-} 
-.cabecalho__perfil::before{
+ } 
+
+  .cabecalho__perfil::before{
   content: "";
   display: block;
   width: 32px;
@@ -82,17 +83,15 @@ cabecalho__perfil {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
+ }
 
-.cabecalho__perfil::after{
+  .cabecalho__perfil::after{
   content: "\e90d";
   color:#ffffff;
   font-size: 1.5rem;
-
+ }
 }
 
-
-}
 .menu-lateral{
   display: flex;
   flex-direction: column;
@@ -102,10 +101,12 @@ cabecalho__perfil {
 
   position: absolute;
   left: -100vw;
+  transition: .25s;
 }
 
 .menu-lateral--ativo{
  left: 0;
+ transition: .25s;
 }
 
 .menu-lateral__logo{
@@ -128,9 +129,8 @@ cabecalho__perfil {
   border-left: 8px solid #ffffff
 }
 
-
-
 .menu-lateral__link::before{
+  content: "\e900";
   width: 24px;
   height: 24px;
   font-size: 24px;
@@ -157,7 +157,7 @@ cabecalho__perfil {
   content:"\e90a";
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (min-width: 1440px){
   .menu-lateral{
     position: static;
     width: 200px;
@@ -183,7 +183,7 @@ cabecalho__perfil {
 }
 
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .principal{
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -279,7 +279,7 @@ cabecalho__perfil {
   display: none;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .cartao--recentes{
     display: grid;
     grid-template-columns: auto auto;
