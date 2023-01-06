@@ -32,10 +32,10 @@ public class TestaMetodo {
 
 		contaDaMarcela.transfere(321, contaDoPaulo); // como esse método é um boolean, eu posso meter ele dentro de um IF
 
-		if(contaDaMarcela.transfere(2221, contaDoPaulo)) {
+		if(contaDaMarcela.transfere(21, contaDoPaulo)) {
 			System.out.println("Transferência Realizada com sucesso");
 		} else { 
-			System.out.println("Transfência falhou");
+			System.out.println("Transfência falhou por falta de fundos");
 		}
 
 		
@@ -43,6 +43,14 @@ public class TestaMetodo {
 
 		System.out.println("Neste momento a conta do Paulo  tem um saldo de: " + contaDoPaulo.saldo);
 
+		contaDoPaulo.titular = "Paulão do Caminhão";
+		contaDaMarcela.titular = "Marcela Banguela"; 
+		
+		System.out.println(contaDoPaulo.titular);
+		System.out.println(contaDaMarcela.titular);
+		
+		
+		
 	}
 
 }
