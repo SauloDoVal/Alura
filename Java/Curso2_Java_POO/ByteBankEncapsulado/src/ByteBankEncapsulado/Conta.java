@@ -99,7 +99,9 @@ public class Conta {
 	}
 	
 	public static int getTotal() {
+		//System.out.println(this.saldo); esse Sout não funciona, justamente pq dentro do contexto estático não existe this. O método static só pode acessar atributos statics 
 		return Conta.total;
+		
 		//Neste getter eu tb não vou colocar um this... tenho que por o nome Conta., por se tratar do nome desta classe.
 		// Eu posso pedir para uma conta em particular me voltar o número total de contas, mas se no main eu quero que a Conta me volte isso, tenho que meter um static no método. 
 	}
