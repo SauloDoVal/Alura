@@ -30,7 +30,7 @@ public class GerenteCerto extends Funcionario {
 		//return super.getBonus() + super.salario;// eu posso, no lugar de usar super.salário, manter a classe salario como privada (no lugar de protected) e pegar esse saláriu usando o método super.getSalario 
 		//Inclusive, este é o método indicado. 
 		System.out.println("Chamando o método do Gerente");
-		return super.getBonus() + super.getSalario();
+		return super.getSalario();
 	
 	
 	}
