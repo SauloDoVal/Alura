@@ -17,7 +17,7 @@ public class TestaTributaveis {
 		calc.registra(sDV);
 		
 		
-		System.out.println(calc.getTotalImposto());
+		System.out.println(calc.getTotalImposto()); //42 from SeguroDeVda, the magic number we have defined... and 1 = 1% of 100 we have deposit at CC
 		
 		
 	}
