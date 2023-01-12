@@ -27,7 +27,8 @@ public class TesteReferencias {
 		//GerenteCerto g3 = new Funcionario();
 		
 		
-		g1.autentica(234);
+//		g1.autentica(234);
+		
 		//g2.autentica(234); The method autentica will not work with g2, as it is a method from gerente, I created a Funcionário after all, and I can only use methods from the super class 
 		// Funcionario g2 = new GerenteCerto(); // This is a example of polymorphism,  new GerenteCerto() is the object that we are creating, and Funcionario is its reference 
 		 

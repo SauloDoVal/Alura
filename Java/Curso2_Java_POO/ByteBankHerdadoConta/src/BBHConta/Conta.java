@@ -12,7 +12,7 @@ public abstract class Conta {
     private int agencia;
     private int numero;
     private Cliente titular;
-    private static int total = 9;
+    private static int total = 0;
 
     
   //A abstract class can have a Constructor  

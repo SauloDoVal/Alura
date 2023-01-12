@@ -7,6 +7,7 @@ public class testeGerente {
 		
 		
 		
+		
 		GerenteCerto g1 = new GerenteCerto();
 		g1.setNome("Geraldo");  // Todos os dados como nome e CPF estão surgindo devido a herança que o GerenteCerto tem do funcionário 
 		g1.setCpf("111.111.111-00");
@@ -22,9 +23,17 @@ public class testeGerente {
 		
 		boolean autenticou = g1.autentica(1234);
 				
-		System.out.println(autenticou);
 		
 		System.out.println(g1.getBonus());
+		
+		
+		
+		Autenticavel referencia = new GerenteCerto(); // the reference in this case is Autenticavel (our interface) and we are using this reference to point at the class GerenteCerto
+		
+		
+		
+		
+		
 		
 	}
 	

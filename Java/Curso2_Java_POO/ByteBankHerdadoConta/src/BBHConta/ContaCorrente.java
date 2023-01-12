@@ -1,6 +1,6 @@
-package BBHConta;
+ package BBHConta;
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel{
 
 	// For this constructor to work I will need to create a constructor that makes
 	// reference to the superclass, or... create a default constructor (blank) at
@@ -22,6 +22,11 @@ public class ContaCorrente extends Conta {
 	@Override
 	public void deposita(double valor) {
 		super.saldo += valor;
+	}
+
+	@Override
+	public double getValorImposto() {
+		return super.saldo * 0.01;
 	}
 
 }
