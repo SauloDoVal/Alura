@@ -37,23 +37,23 @@ public abstract class Conta {
     public abstract void deposita(double valor);
     
     
+    // I am now changing this code, instead of boolean, I will make this return me a void... and I will add a try/catch in case or errors.
+    // In general, the exceptions go above the logic... 
     
-    public boolean saca(double valor) {
-        if(this.saldo >= valor) {
+    public void saca(double valor) throws SaldoInsuficienteException{ //With a checked method, I need to put this throw in the signature of the method.
+        if(this.saldo < valor) {
+        	// The saldo should not be smaller than the amount I want to withdraw... I am trying to point this as a issue and throwing my error to deal with it 
+        	throw new SaldoInsuficienteException ("Saldo em conta: " + this.saldo + ", Valor do saque:  " + valor);
+        	}
             this.saldo -= valor;
-            return true;
-        } else {
-            return false;
-        }
+        
     }
 
-    public boolean transfere(double valor, Conta destino) {
-        if(this.saca(valor)) {
-                destino.deposita(valor);
-                return true;
-        } else {
-                return false;
-        }
+    public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
+        this.saca(valor); // Now, if saca does not work the exception will be thrown and leave the method. 
+        destino.deposita(valor);
+        
+        
     }
     
     
