@@ -17,7 +17,7 @@ public class ContaPoupanca extends Conta {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Conta Poupanca ($):" +" Número: " +  super.getNumero() + " Agência: " + super.getAgencia();
+		return "Conta Poupança:" +" Número: " +  super.getNumero() + " Agência: " + super.getAgencia() + " Saldo: " + super.getSaldo();
 
 }
 }

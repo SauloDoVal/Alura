@@ -1,8 +1,10 @@
 package br.com.byteBank.BBHConta.modelo;
 
 //The accounts that should actually work are the CC and CP, not CC by it self. 
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta>{
 
+	//I can Implement Comparable  I want to set how an Account will be compared with the other,to see this implementation, go to TesteComComparable 
+	
 
 	/**
 	 * Class that represents the frame of a account.
@@ -115,11 +117,58 @@ public abstract class Conta {
         return Conta.total;
     }
     
+    
+    
+    
+    @Override
+    public int compareTo(Conta outra) {
+    	return Double.compare(this.saldo, outra.saldo);
+    }
+    
+    
+    
+    
     @Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Número: " +  this.getNumero() + " Agência: " + this.getAgencia();
+		return "Número: " +  this.getNumero() + " Agência: " + this.getAgencia() + " Saldo: " + this.saldo
+				;
 
 
 }
+
+
+	public boolean ehIgual(Conta outra) {
+		if(this.agencia != outra.agencia) {
+			return false; 
+		}
+		if(this.numero != outra.numero) {
+			return false;
+		}
+		return true;
+	}
+    
+//------------- Instead of this homemade method, lets use the method .equals, overriding it with our implementation  
+    
+	
+	@Override
+	public boolean equals(Object ref) {
+    	
+    	Conta outra = (Conta) ref;
+    	
+		if(this.agencia != outra.agencia) {
+			return false; 
+		}
+		if(this.numero != outra.numero) {
+			return false;
+		}
+		return true;
+	}
+    
+  
+	
+	
+    
+    
+    
 }
