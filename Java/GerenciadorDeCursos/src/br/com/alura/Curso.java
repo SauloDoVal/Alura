@@ -2,9 +2,12 @@ package br.com.alura;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class Curso {
@@ -18,6 +21,7 @@ public class Curso {
 														// array list e passar a usar um linked list no futuro
 	
 	public Set<Aluno> alunos = new HashSet<>();
+	private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();  // Aqui eu estou criando um mapa que associa a matrícula ao aluno e guarda essa info. 
 	
 	
 	
@@ -70,6 +74,8 @@ public class Curso {
 
 	public void matricula(Aluno aluno) {
 		this.alunos.add(aluno);
+		this.matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
+
 		
 	}
 
@@ -80,6 +86,27 @@ public class Curso {
 	public  boolean estaMatriculado(Aluno aluno) { //Método para checar se o aluno está matriculado, se ele consta no curso
 		return alunos.contains(aluno);
 	}
+
+	
+	public Aluno buscaNomePorMatricula(int numeroMatricula) {
+		if(!matriculaParaAluno.containsKey(numeroMatricula))
+			throw new NoSuchElementException("Matricula : " + numeroMatricula + " Não encontrada");
+		return matriculaParaAluno.get(numeroMatricula);
+	}
+	
+	
+	
+	
+	
+	
+	//FEITA A IMPLEMENTAÇÃO DO HASHMAP ESTE CÓDIGO MUDA PARA O DE CIMA...
+//	public Aluno buscaNomePorMatricula(int numeroMatricula) {
+//		for (Aluno aluno : alunos) {
+//			if(aluno.getNumeroMatricula() == numeroMatricula)
+//				return aluno;
+//		}
+//		throw new NoSuchElementException("Matricula : " + numeroMatricula + " Não encontrada");
+//	}
 	
 	
 	
