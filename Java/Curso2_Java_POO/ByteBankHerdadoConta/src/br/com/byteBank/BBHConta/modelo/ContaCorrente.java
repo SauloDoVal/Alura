@@ -1,5 +1,7 @@
 package br.com.byteBank.BBHConta.modelo;
 
+import java.io.Serializable;
+
 public class ContaCorrente extends Conta implements Tributavel{
 
 	// For this constructor to work I will need to create a constructor that makes

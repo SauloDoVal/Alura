@@ -1,7 +1,9 @@
 package br.com.byteBank.BBHConta.modelo;
 
+import java.io.Serializable;
+
 //The accounts that should actually work are the CC and CP, not CC by it self. 
-public abstract class Conta extends Object implements Comparable<Conta>{
+public abstract class Conta extends Object implements Comparable<Conta>, Serializable {
 
 	//I can Implement Comparable  I want to set how an Account will be compared with the other,to see this implementation, go to TesteComComparable 
 	
